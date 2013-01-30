@@ -503,7 +503,7 @@ saveHeaders:function()
 
     isc.IButton.create({
         ID : "newRecordButton_tp",
-        title : "Edit New",
+        title : "Add",
         left : "1%",
         top : 5,
         width : 80,
@@ -551,9 +551,9 @@ saveHeaders:function()
         titleOrientation : "left",
         fields : [ {
             name : "BOAT_NAME",
-            title : "Vessel/Voyage_No.",
+            title : "Vessel/Voyage&nbsp;No.",
             type : "text",
-            defaultValue: "GANG QIANG V.211E",
+            //defaultValue: "GANG QIANG V.211E",
             keyDown : function(item, form, keyName) {
                 if (keyName == "Enter") {
                     findForm_tp.findItems();
@@ -562,9 +562,9 @@ saveHeaders:function()
         },
             {
                 name : "DELIVERY_PORT",
-                title : "Port_of_Delivery",
+                title : "Port&nbsp;of&nbsp;Delivery",
                 type : "text",
-                defaultValue: "ALTAMIRA,MEXICO",
+                //defaultValue: "ALTAMIRA,MEXICO",
                 keyDown : function(item, form, keyName) {
                     if (keyName == "Enter") {
                         findForm_tp.findItems();
@@ -858,7 +858,7 @@ saveHeaders:function()
                     required : true,
                     width : 100,
                     canEdit:false
-                }, {
+                }, /*{
                     name : "ORDERED_QTY",
                     type : "float",
                     title : "Order Qty",
@@ -869,7 +869,7 @@ saveHeaders:function()
                     showGridSummary : false,
                     formatCellValue : "isc.Format.toUSString(value)",
                     canEdit:true
-                }, {
+                }, */{
                     name : "SHIP_QTY",
                     type : "float",
                     title : "Ship Qty",
@@ -881,7 +881,8 @@ saveHeaders:function()
                     showGridSummary : true,
                     formatCellValue : function(value, record) {
                         record.SHIP_QTY = value;
-                        return isc.Format.toUSString(value);
+                        //return isc.Format.toUSString(value);
+                        return isc.Format.toUSString(value,3);
                     },
                     canEdit:true
                 }, {
@@ -1151,6 +1152,10 @@ saveHeaders:function()
             selectionAppearance:"checkbox",
             baseStyle : "myOtherGridCell",
             autoDraw:false,
+            canMultiSort: true,
+            initialSort: [
+                {property: "FRE_ITEM_NUM", direction: "ascending"}
+            ],
             fields : [
                 {
                     name : "LINE_NO",
