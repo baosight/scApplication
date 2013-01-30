@@ -1,0 +1,21 @@
+#DB Settings
+#Mon Dec 10 20:02:34 EST 2012
+GUEST_USER_PWD=GUEST/ORACLE
+fnd_jdbc_stmt_cache_free_mem=TRUE
+APPL_SERVER_ID=D08A3BCC4A8408EDE0440003BACE8D1914775915031587729295325450072332
+APPS_JDBC_DRIVER_TYPE=THIN
+fnd_jdbc_buffer_decay_interval=300
+fnd_jdbc_usable_check=false
+fnd_jdbc_plsql_reset=false
+GWYUID=APPLSYSPUB/PUB
+fnd_jdbc_buffer_min=1
+APPS_JDBC_URL=jdbc\:oracle\:thin\:@(DESCRIPTION\=(LOAD_BALANCE\=YES)(FAILOVER\=YES)(ADDRESS_LIST\=(ADDRESS\=(PROTOCOL\=tcp)(HOST\=ERP.baosteel.us)(PORT\=1530)))(CONNECT_DATA\=(SID\=DVLP)))
+fnd_jdbc_buffer_max=5
+FND_JDBC_STMT_CACHE_SIZE=200
+TWO_TASK=DVLP
+FND_MAX_JDBC_CONNECTIONS=500
+fnd_jdbc_context_check=true
+FNDNAM=APPS
+fnd_jdbc_buffer_decay_size=5
+DB_PORT=1530
+DB_HOST=erp.baosteel.us
